@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{title}}</title>
+
+    {{!-- Bootstrap core CSS --}}
+    <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.min.css' />
+
+    {{!-- Custom styles --}}
+    <link rel='stylesheet' href='/public/css/style.css' />
+
+</head>
+
+<body>
+    {{!-- Fixed-top Navbar --}}
+
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="main-navbar">
+        <div class="container-fluid"><a class="navbar-brand text-white" href="/">Hangman</a><button
+                data-toggle="collapse" data-target="#navcol-1" class="navbar-toggler"><span class="sr-only">Toggle
+                    navigation</span><span class="navbar-toggler-icon"></span></button>
+        </div>
+    </nav>
+
+
+
+    <div id="main-content-wrapper">
+        {{{body}}}
+    </div>
+
+    {{!-- Bootstrap core JavaScript --}}
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/public/js/comments.js"></script> 
+
+</body>
+
+</html>

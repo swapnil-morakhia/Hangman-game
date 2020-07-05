@@ -1,0 +1,34 @@
+{
+  "name": "cs546b_final_project",
+  "version": "1.0.0",
+  "description": "Final Project for CS 546 Section B: Hangman Game",
+  "main": "app.js",
+  "scripts": {
+    "seed": "node ./tasks/seed.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidtsu/CS546B_Final_Project.git"
+  },
+  "author": "Kyle Gensheimer, David Tsu, Esther Stolbach, Swapnil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidtsu/CS546B_Final_Project/issues"
+  },
+  "homepage": "https://github.com/davidtsu/CS546B_Final_Project#readme",
+  "dependencies": {
+    "@khanacademy/tota11y": "^0.2.0",
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^4.4.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.3",
+    "express-session": "^1.17.1",
+    "handlebars": "^4.7.6",
+    "jquery": "^3.5.1",
+    "mongodb": "^3.5.6",
+    "uuid": "^8.0.0",
+    "xss": "^1.0.6"
+  }
+}

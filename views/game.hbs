@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <h1 class="text-center">Welcome to Hangman!</h1>
+    <div class='text-center'>
+        <h2 id="wordStatus"></h2>
+        <h2 id='game-results'></h2>
+
+        <div id="img-container">
+            <img src='/public/img/6_left.png' id='chances-left' alt="Hangman Picture">
+        </div>
+
+        <label for='incorrect-guesses'>Attempts:</label>
+            <h2 id='incorrect-guesses'></h2>
+
+            <form id='game-form'>
+                <label for="atext">
+                    Letter:
+                </label>
+                <input type="text" id="atext" maxlength="1" onkeyup="validate(this);" />
+                <button id="guess-btn" type='submit'>Guess</button>
+            </form>
+
+            <div class='hidden form-group' id='error-container'>
+                <div class="alert alert-danger text-goes-here"></div>
+            </div>
+
+    </div>
+    <!-- We weren't sure how else to pass the parameter into the script, so yeah. So much for security. -->
+    <script src='/public/js/game.js' word={{word}} gameId={{gameId}}></script>
+</div>

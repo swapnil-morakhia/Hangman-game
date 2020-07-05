@@ -1,0 +1,87 @@
+<div class="container-fluid">
+
+    <div class="row justify-content-center">
+        <h1 class="text-center">Welcome, {{user.firstName}} {{user.lastName}}</h1>
+    </div>
+
+    <div class="row justify-content-center">
+
+
+        <div class='home-table'>
+            <h2>Your Recent Games</h2>
+            <table id='home-your-recent'>
+                <tr class='table-header'>
+                    {{!-- <td>#</td> --}}
+                    <td>Word</td>
+                    {{!-- <td>Theme</td> --}}
+                    <td>Win or Loss</td>
+                </tr>
+                {{#each userGames}}
+                <tr>
+                    <td><a href="/dashboard/game?gameId={{this._id}}">{{this.word}}</a></td>
+                    {{#if (containsWinner ../user this._id)}}
+                    <td>Won {{user.firstName}}</td>
+                    {{else}}
+                    <td>Lost</td>
+                    {{/if}}
+                </tr>
+                {{/each}}
+
+            </table>
+        </div>
+
+        <div class='home-table'>
+            <h2>Themes to Play</h2>
+            <table id='home-themes'>
+                <tr class='table-header'>
+                    <td>Theme</td>
+                </tr>
+                {{#each allDictionaries}}
+                <tr>
+                    <td><a href='/dashboard/game?themeId={{this._id}}'>{{this.theme}}</a></td>
+                </tr>
+                {{/each}}
+                <!-- tr entries should be dynamically filled -->
+            </table>
+        </div>
+
+        <div class='home-table'>
+            <h2>Recently Played Games</h2>
+            <table id='home-all-recent'>
+                <tr class='table-header'>
+                    <td>Game #</td>
+                    <td>Latest Player</td>
+                    <td>W/L</td>
+                </tr>
+                {{#each allGames}}
+                {{#if (isdefined this.latestPlayer)}}
+                <tr>
+                    <td><a href="/dashboard/game?gameId={{this._id}}">Game {{this.gameNumber}}</a></td>
+                    <td><a href="/dashboard/profile/{{this.latestPlayer._id}}">{{this.latestPlayer.firstName}}</a></td>
+                    {{#if (containsWinner this.latestPlayer this._id)}}
+                    <td>Won</td>
+                    {{else}}
+                    <td>Lost</td>
+                    {{/if}}
+                </tr>
+                {{/if}}
+                {{/each}}
+
+
+                <!-- tr entries should be dynamically filled -->
+            </table>
+        </div>
+
+        <div class='home-table'>
+            <h2>Most Played</h2>
+            <table id='home-all-recent'>
+                <tr class='table-header'>
+                    <td>Word</td>
+                </tr>
+                <tr>
+                    <td>{{max}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

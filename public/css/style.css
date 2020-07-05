@@ -1,0 +1,89 @@
+/* 
+This is to make sure that the body of the page is not behind the navbar: 
+See views/layouts/main.hbs 
+*/
+
+
+#main-content-wrapper {
+    margin-top: 56px;
+}
+
+.form-login {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form-login .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-login .form-control:focus {
+    z-index: 2;
+}
+
+.form-login input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-login input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+table, td{
+    border: 1px solid gray;
+    min-width: 300px;
+}
+
+td {
+    min-width: 100px;
+    text-align: center;
+}
+
+.home-table {
+    padding-left: 50px;
+    float: left;
+}
+
+.table-header {
+    background-color: rgb(238, 238, 238);
+}
+
+.success {
+    color: green;
+}
+
+.failure {
+    color: red;
+}
+
+#incorrect-guesses {
+    color: red;
+}
+
+#searchUser {
+    height: 39px;
+}
+
+#atext {
+    text-align: center;
+}
+
+
+#signInBtn {
+    background-color: #0072ee;
+}
+
+a {
+    color: #0072ee
+}

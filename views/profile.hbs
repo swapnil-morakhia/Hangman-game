@@ -1,0 +1,51 @@
+<div class="container-fluid">
+
+    <div class="row justify-content-center">
+        <h1 class="text-center">{{user.firstName}}'s Profile</h1>
+    </div>
+
+    <div class="row justify-content-center">
+        <h2>Profile Statistics</h2>
+    </div>
+    <div class="row justify-content-center">
+        <table id='profile-stats-wins'>
+            <tr class='table-header'>
+                <td>Win Total</td>
+                <td>Total Games</td>
+                <td>Win Percentage</td>
+            </tr>
+            <tr>
+                <td>{{user.gamesWonIDs.length}}</td>
+                <td>{{total}}</td>
+                <td>{{win}}%</td>
+
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="row justify-content-center">
+        <h2>Recent Games</h2>
+    </div>
+    <div class="row justify-content-center">
+        <table id='profile-stats-recent'>
+
+            <tr class='table-header'>
+                <td>Word</td>
+                <td>W/L</td>
+            </tr>
+
+            {{#each recentGames}}
+            <tr>
+                <td>{{this.word}}</td>
+                {{#if (containsWinner ../user this._id)}}
+                <td>Won {{user.firstName}}</td>
+                {{else}}
+                <td>Lost</td>
+                {{/if}}
+            </tr>
+            {{/each}}
+
+        </table>
+    </div>
+</div>

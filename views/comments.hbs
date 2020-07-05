@@ -1,0 +1,71 @@
+<div class="container-fluid">
+
+    <div class="row justify-content-center">
+        <h1 class='text-center'>Game Log</h1>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class='text-center'>
+            <h3>Word: {{game.word}}</h3>
+
+            {{#if gameWon}}
+            <h3 class='success'>You won this game!</h3>
+            {{else}}
+            <h3 class='failure'>You lost this game!</h3>
+            {{/if}}
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <table class='results-stats'>
+            <tr class='table-header'>
+                <td>Players that have won this word:</td>
+                <td>Players that have lost this word:</td>
+            </tr>
+            <tr>
+                <td>{{game.timesWon}}</td>
+                <td>{{game.timesLost}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="row justify-content-center">
+        <div id="comment-area">
+            <label for='comments'>Here's what our users have to say about this word...</label>
+            <ul id='comments'>
+                {{#each comments}}
+                {{!-- {{> new-comment}} --}}
+                <li>{{this.commenter.name}} : {{this.comment}}</li>
+                {{!-- {{else}}
+            <li>No users have commented on this word yet. Submit a comment to be the first!</li> --}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <!--<div id="comment-area">
+            {{#each comments}} {{> new-comment}} {{/each}}
+    </div>-->
+
+    <div class="row justify-content-center">
+        <form id="form-comment">
+            <div class="form-group row">
+                <label class="col-form-label col-md-5" for='phrase'>Leave a comment!</label>
+                <div class="col-md-12">
+                    <textarea class="form-control" id='phrase' rows='2' name='phrase'></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <button class="btn btn-primary " type="submit">Send Comment</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="row justify-content-center">
+
+        <a href='/dashboard'>Back to Dashboard</a>
+
+        <script src='/public/js/comments.js'></script>
+    </div>

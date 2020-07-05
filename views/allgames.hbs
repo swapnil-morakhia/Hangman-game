@@ -1,0 +1,37 @@
+<div class="container-fluid">
+
+    <div class="row justify-content-center">
+
+
+        <div class='home-table'>
+            <h1 class="text-center">All Games</h1>
+            <table id='home-all-recent'>
+                <tr class='table-header'>
+                    <td>Game #</td>
+                    <td>Latest Player</td>
+                    <td>W/L</td>
+                </tr>
+                {{#each allGames}}
+
+                <tr>
+                    <td><a href="/dashboard/game?gameId={{this._id}}">Game {{this.gameNumber}}</a></td>
+                    {{#if (isdefined this.latestPlayer)}}
+                    <td><a href="/dashboard/profile/{{this.latestPlayer._id}}">{{this.latestPlayer.firstName}}</a></td>
+                    {{#if (containsWinner this.latestPlayer this._id)}}
+                    <td>Won</td>
+                    {{else}}
+                    <td>Lost</td>
+                    {{/if}}
+                    {{else}}
+                    <td>-</td>
+                    <td>-</td>
+                    {{/if}}
+
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+
+    </div>
+
+</div>

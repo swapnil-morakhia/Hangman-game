@@ -1,0 +1,26 @@
+<div class="container-fluid">
+
+    <div class="row justify-content-center">
+        <h1 class="text-center">High Scores</h1>
+    </div>
+
+    <div class="row justify-content-center">
+        <table id='highscores'>
+            <tr class='table-header'>
+                <td>Rank</td>
+                <td>Username</td>
+                <td># Wins</td>
+                <td>Win %</td>
+            </tr>
+            {{#each sortedUsers}}
+            <tr>
+                <td>{{increment @index}}</td>
+                <td><a href="/dashboard/profile/{{this._id}}">{{this.firstName}} {{this.LastName}}</a></td>
+                <td>{{this.gamesWonIDs.length}}</td>
+                <td>{{this.winPercentage}}%</td>
+            </tr>
+            {{/each}}
+            <!-- additional tr entries should be dynamically filled -->
+        </table>
+    </div>
+</div>
